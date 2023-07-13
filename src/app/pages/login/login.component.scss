@@ -1,0 +1,37 @@
+.loginContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.2);
+    padding: 10px;
+    border: black solid 1px;
+  }
+  
+  .loginContainer form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .loginContainer label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .loginContainer input{
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+
+  .loginContainer button[type="submit"] {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .loginContainer button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+  
+  

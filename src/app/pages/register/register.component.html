@@ -1,0 +1,26 @@
+<div class="registerContainer">
+    <h2>Regisztráció</h2>
+      <div>
+        <label for="username">Felhasználónév:</label>
+        <input required type="text" id="username" name="username" [formControl]="username">
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input required type="email" id="email" name="email" [formControl]="email">
+      </div>
+      <div>
+        <label for="name">Teljes név:</label>
+        <input required type="text" id="name" name="name" [formControl]="name">
+      </div>
+      <div>
+        <label for="age">Kor:</label>
+        <input required type="number" id="age" name="age" [formControl]="age">
+      </div>
+      <div>
+        <label for="password">Jelszó:</label>
+        <input required type="password" id="password" name="password" [formControl]="password">
+      </div>
+      <button (click)="register()">Regisztráció</button>
+      <a href="/login">Van már fiókod?</a>   
+</div>
+

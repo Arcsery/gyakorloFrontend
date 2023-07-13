@@ -1,0 +1,37 @@
+.registerContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.2);
+    padding: 10px;
+    border: black solid 1px;
+  }
+  
+  .registerContainer form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .registerContainer label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .registerContainer input{
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+
+  .registerContainer button{
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .registerContainer button:hover {
+    background-color: #45a049;
+  }
+  
+  

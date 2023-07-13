@@ -1,0 +1,15 @@
+<div class="loginContainer">
+    <h2>Bejelentkezés</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div>
+        <label for="username">Felhasználónév:</label>
+        <input type="text" id="username" name="username" [formControl]="username">
+      </div>
+      <div>
+        <label for="password">Jelszó:</label>
+        <input type="password" id="password" name="password" [formControl]="password">
+      </div>
+      <button type="submit">Bejelentkezés</button>
+    </form>    
+</div>
+
