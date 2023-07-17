@@ -11,7 +11,7 @@ export class BackendService {
   constructor(private http: HttpClient) { }
 
   getAllUsers(): Observable<User[]>{
-    return this.http.get<User[]>('http://localhost:8080/getUsers')
+    return this.http.get<User[]>('http://localhost:8080/api/test/getUsers')
   }
 
   addUser(user: User): Observable<User> {

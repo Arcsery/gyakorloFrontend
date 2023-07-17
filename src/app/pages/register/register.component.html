@@ -1,26 +1,114 @@
-<div class="registerContainer">
-    <h2>Regisztráció</h2>
-      <div>
-        <label for="username">Felhasználónév:</label>
-        <input required type="text" id="username" name="username" [formControl]="username">
+<div class="register-form rounded">
+  <h2>Regisztráció</h2>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label>Teljes név</label>
+      <input
+        type="text"
+        formControlName="fullname"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f['fullname'].errors }"
+      />
+      <div *ngIf="submitted && f['fullname'].errors" class="invalid-feedback">
+        <div *ngIf="f['fullname'].errors['required']" class="error-message">
+          Teljes név szükséges
+        </div>
       </div>
-      <div>
-        <label for="email">Email:</label>
-        <input required type="email" id="email" name="email" [formControl]="email">
+    </div>
+    <div class="form-group">
+      <label>Felhasználó név</label>
+      <input
+        type="text"
+        formControlName="username"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f['username'].errors }"
+      />
+      <div *ngIf="submitted && f['username'].errors" class="invalid-feedback">
+        <div *ngIf="f['username'].errors['required']">Felhasználó név szükséges</div>
+        <div *ngIf="f['username'].errors['minlength']">
+          Legalább 4 karakterből kell állnia a felhasználó névnek
+        </div>
+        <div *ngIf="f['username'].errors['maxlength']">
+          Nem lehet hosszabb 15 karakternél a felhasználó név
+        </div>
       </div>
-      <div>
-        <label for="name">Teljes név:</label>
-        <input required type="text" id="name" name="name" [formControl]="name">
-      </div>
-      <div>
-        <label for="age">Kor:</label>
-        <input required type="number" id="age" name="age" [formControl]="age">
-      </div>
-      <div>
-        <label for="password">Jelszó:</label>
-        <input required type="password" id="password" name="password" [formControl]="password">
-      </div>
-      <button (click)="register()">Regisztráció</button>
-      <a href="/login">Van már fiókod?</a>   
-</div>
+    </div>
 
+    <div class="form-group">
+      <label>Kor</label>
+      <input
+        type="text"
+        formControlName="age"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f['age'].errors }"
+      />
+      <div *ngIf="submitted && f['age'].errors" class="invalid-feedback">
+        <div *ngIf="f['age'].errors['required']">Kor szükséges</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Email</label>
+      <input
+        type="text"
+        formControlName="email"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
+      />
+      <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+        <div *ngIf="f['email'].errors['required']">Email szükséges</div>
+        <div *ngIf="f['email'].errors['email']">Nem valós Email</div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Jelszó</label>
+      <input
+        type="password"
+        formControlName="password"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"
+      />
+      <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+        <div *ngIf="f['password'].errors['required']">jelszó szükséges</div>
+        <div *ngIf="f['password'].errors['minlength']">
+          A jelszónak legalább 6 karakterből kell állnia
+        </div>
+        <div *ngIf="f['password'].errors['maxlength']">
+          A jelszó nem lehet hosszabb 40 karakternél
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Megerősítő jelszó</label>
+      <input
+        type="password"
+        formControlName="confirmPassword"
+        class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && f['confirmPassword'].errors }"
+      />
+      <div
+        *ngIf="submitted && f['confirmPassword'].errors"
+        class="invalid-feedback"
+      >
+        <div *ngIf="f['confirmPassword'].errors['required']">
+          Megerősítő jelszó szükséges
+        </div>
+        <div *ngIf="f['confirmPassword'].errors['matching']">
+          Nem egyeznek a jelszavak
+        </div>
+      </div>
+    </div>
+    <div class="form-group button-group">
+      <button type="submit" class="btn btn-primary">Register</button>
+      <button
+        type="button"
+        (click)="onReset()"
+        class="btn btn-warning float-right"
+      >
+        Reset
+      </button>
+    </div>
+  </form>
+</div>

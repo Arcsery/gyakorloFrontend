@@ -1,37 +1,25 @@
-.registerContainer {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(1.2);
-    padding: 10px;
-    border: black solid 1px;
+p {
+    font-family: Lato;
   }
   
-  .registerContainer form {
-    display: flex;
-    flex-direction: column;
+  #root {
+    padding: 30px;
   }
   
-  .registerContainer label {
-    display: block;
-    margin-bottom: 5px;
+  .register-form {
+    max-width: 350px;
+    margin: auto;
+    margin-top: 150px;
+    background-color: #f0f0f0; 
+    border-radius: 10px;
+    padding: 20px;
   }
 
-  .registerContainer input{
-    padding: 5px;
-    margin-bottom: 10px;
+  .form-group.button-group {
+    margin-top: 20px;
   }
 
-  .registerContainer button{
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
+  button.btn-warning {
+    margin-left: 10px; /* Változtasd meg a kívánt margint */
   }
-  
-  .registerContainer button:hover {
-    background-color: #45a049;
-  }
-  
   
