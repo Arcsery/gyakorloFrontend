@@ -1,15 +1,39 @@
 <div class="loginContainer">
-    <h2>Bejelentkezés</h2>
-    <form (ngSubmit)="onSubmit()">
-      <div>
-        <label for="username">Felhasználónév:</label>
-        <input type="text" id="username" name="username" [formControl]="username">
+   <h2>Bejelentkezés</h2>
+   <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <input
+         type="text"
+         placeholder="felhasználó név vagy jelszó"
+         formControlName="usernameOrEmail"
+         class="form-control"
+         [ngClass]="{'is-invalid': submitted && f['usernameOrEmail'].errors}"
+         />
+         <div *ngIf="submitted && f['usernameOrEmail'].errors" class="invalid-feedback">
+          <div *ngIf="f['usernameOrEmail'].errors['required']" class="error-message">
+            Add meg az emailt vagy a felhasználó nevet
+          </div>
+        </div>
       </div>
-      <div>
-        <label for="password">Jelszó:</label>
-        <input type="password" id="password" name="password" [formControl]="password">
-      </div>
-      <button type="submit">Bejelentkezés</button>
-    </form>    
+      <div class="form-group">
+          <input 
+          type="password"
+          placeholder="jelszó"
+          formControlName="password"
+          class="form-control"
+          [ngClass]="{'is-invalid': submitted && f['password'].errors}"
+          />
+          <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+            <div *ngIf="f['password'].errors['required']" class="error-message">
+              Jelszó szükséges
+            </div>
+          </div>  
+        </div>
+        <div class="form-group button-group">
+          <button type="submit" class="btn btn-primary">Bejelentkezés</button>
+          <a href="/register">Nincs még fiókód?</a>
+        </div>
+   </form>
 </div>
 
+l
