@@ -5,7 +5,8 @@
         <li><a href="/register">Regisztráció</a></li>
         <li><a href="/login">Bejelentkezés</a></li>
         <button (click)="logout()">Kijelentkezés</button>
-        <li>{{currentUser}}</li>
+        <li *ngIf="cookieUsername">{{ cookieUsername }}</li>
+        <li *ngIf="loginUsername">{{ loginUsername }}</li>
       </ul>
     </nav>
   </header>

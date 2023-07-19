@@ -22,7 +22,7 @@ export class RegisterComponent implements OnInit{
     });
     submitted: boolean = false;
 
-    constructor(private formBuilder: FormBuilder, private authService: AuthService){}
+    constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router){}
 
 
     ngOnInit(): void {
@@ -74,6 +74,7 @@ export class RegisterComponent implements OnInit{
     this.authService.register(user).subscribe({
       next: result =>{
         console.log(result);
+        this.router.navigateByUrl("/login")
       },
       error: err =>{
         console.log(err)

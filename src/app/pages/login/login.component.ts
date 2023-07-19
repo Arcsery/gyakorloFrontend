@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { SharedDataService } from 'src/app/helpers/shared-data.service';
 import { User } from 'src/app/model/User';
 import { UserLogin } from 'src/app/model/UserLogin';
 import { AuthService } from 'src/app/services/auth.service';
@@ -22,7 +23,7 @@ export class LoginComponent implements OnInit{
   isLoggedIn: boolean = false;
   roles: string[] = [];
 
-  constructor(private formBuilder: FormBuilder, private authService: AuthService, private storageService: StorageService, private router: Router){}
+  constructor(private sharedDataService: SharedDataService, private formBuilder: FormBuilder, private authService: AuthService, private storageService: StorageService, private router: Router){}
 
 
   ngOnInit(): void {
@@ -56,7 +57,9 @@ export class LoginComponent implements OnInit{
     this.authService.login(user).subscribe({
       next: result =>{
         this.storageService.saveUser(result);
+        this.storageService.saveUserToCookie(result);
         this.isLoggedIn = true;
+        this.sharedDataService.setUsername(result.username)
         this.roles = this.storageService.getUser().roles;
         this.router.navigateByUrl("/home")
       },
