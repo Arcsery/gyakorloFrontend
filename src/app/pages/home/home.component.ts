@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'src/app/model/User';
 import { BackendService } from 'src/app/services/backend.service';
+import { LayoutService } from 'src/app/services/layout.service';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,7 @@ export class HomeComponent implements OnInit {
   
   users: User[] = [];
 
-  constructor(private backendService: BackendService, private router: Router){
+  constructor(private backendService: BackendService, private router: Router, public layoutService: LayoutService){
 
   }
 

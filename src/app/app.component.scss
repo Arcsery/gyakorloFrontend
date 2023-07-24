@@ -1,0 +1,22 @@
+.layout-container {
+    display: flex;
+  }
+  
+  .layout-container-active .layout-sidebar {
+    transform: translateX(0);
+  }
+  
+  .layout-content {
+    flex: 1;
+    transition: transform 0.3s ease;
+  }
+  
+  .layout-container-active .layout-content {
+    transform: translateX(350px);
+  }
+
+  body{
+    margin-top: 110px;
+    margin-left: 50px;
+    margin-right: 50px;
+  }

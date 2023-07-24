@@ -1,8 +1,17 @@
-.userTable {
-    margin: 20px;
-  }
-  
-  table {
+.layout-container{
+    margin-top: 100px;
+    margin-left: 50px;
+    margin-right: 500px;
+    transition: transform 0.3s ease;
+}
+
+.layout-container-active{
+  margin-top: 100px;
+  margin-right: 500px;
+  transition: transform 0.3s ease;
+}
+
+table {
     width: 100%;
     border-collapse: collapse;
     border: 1px solid #ddd;

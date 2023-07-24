@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { SharedDataService } from 'src/app/helpers/shared-data.service';
 import { UserLoggedIn } from 'src/app/model/UserLoggedIn';
 import { AuthService } from 'src/app/services/auth.service';
+import { LayoutService } from 'src/app/services/layout.service';
 import { StorageService } from 'src/app/services/storage.service';
+import { SidebarComponent } from '../sidebar/sidebar.component';
 
 @Component({
   selector: 'app-header',
@@ -13,7 +15,8 @@ export class HeaderComponent implements OnInit{
   cookieUsername?: any
   loginUsername?: any
 
-  constructor(private storageService: StorageService, private authService: AuthService, private sharedDataService: SharedDataService){}
+
+  constructor(public layoutService:LayoutService, private storageService: StorageService, private authService: AuthService, private sharedDataService: SharedDataService){}
   
   ngOnInit(): void {
     const user: UserLoggedIn | null = this.storageService.getUserFromCookie();
