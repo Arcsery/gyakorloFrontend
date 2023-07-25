@@ -1,0 +1,63 @@
+<div class="layout-container" [ngClass]="{'layout-container-active': layoutService.state.overlayMenuActive}">
+    <div class="left-column">
+        <div class="image-container">
+            <img src="https://stmaaprodfwsite.blob.core.windows.net/assets/sites/1/Alex-Robinson-Terravesta-c-electric-egg.jpg" alt="Profile Image" class="profile-image">
+        </div>
+      <p-fieldset legend="Header">
+        <p class="m-0">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+    </p-fieldset>   
+    </div>
+    <p-divider layout="vertical"></p-divider>
+    <div class="right-column">
+        <div class="user-header-container">
+            <div class="header-left-column">
+                <h1>John Doe</h1>
+                <h3 class="text-600 font-medium">Admin</h3>
+            </div>
+            <div class="header-right-column">
+                <p-button label="Módosítás" icon="pi pi-pencil" styleClass="p-button-secondary"></p-button>
+            </div>
+        </div>
+        <p-divider></p-divider>
+        <p-fieldset [style]="{'height':'605px'}">
+            <ng-template pTemplate="header">
+                <div class="flex align-items-center text-primary">
+                    <span class="pi pi-user mr-2"></span>
+                    <span class="font-bold text-lg">Felhasználó adatok</span>
+                </div>
+            </ng-template>
+            <table >
+                <tr>
+                    <td class="text-blue-600">ID</td>
+                    <td>02</td>
+                </tr>
+                <tr>
+                    <td class="text-blue-600">Név</td>
+                    <td>Jhon Doe</td>
+                </tr>  
+                <tr>
+                  <td class="text-blue-600">Kor</td>
+                  <td>22</td>
+                </tr>
+                <tr>
+                  <td class="text-blue-600">Email</td>
+                  <td>valaki@gmail.com</td>
+                </tr>
+                <tr>
+                    <td class="text-blue-600">Telefonszám</td>
+                    <td>22123123</td>
+                </tr>
+                <tr>
+                    <td class="text-blue-600">Munkakör</td>
+                    <td>Marketing</td>
+                </tr>  
+              </table>
+        </p-fieldset>
+    </div>
+  </div>
+
+
+  

@@ -1,0 +1,69 @@
+.layout-container {
+    display: flex;
+    margin-top: 100px;
+    margin-left: 50px;
+    margin-right: 100px;
+    transition: transform 0.3s ease;
+  }
+  
+  .left-column {
+    flex: 1;
+    
+  }
+  
+  .right-column {
+    flex: 2;
+  }
+  
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+  }
+  
+ 
+  .profile-image {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 10px;
+  }  
+  
+.layout-container-active{
+  margin-top: 100px;
+  margin-right: 500px;
+  transition: transform 0.3s ease;
+}  
+
+
+.user-header-container {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.header-left-column {
+  flex: 6;
+}
+
+.header-right-column {
+  flex: 1;
+}
+
+p-fieldset table {
+  width: 100%; /* A táblázat szélességének beállítása */
+  table-layout: fixed; /* A táblázat celláinak mérete a tartalom alapján lesz beállítva */
+  border-collapse: collapse; /* Az oszlopok közötti szegélyek összevonása */
+  height: 505px;
+}
+
+p-fieldset th,
+p-fieldset td {
+  border: 1px solid #ddd; /* Opcionális: A cellák szegélyének beállítása */
+  padding: 8px; /* Opcionális: A cellák belső térköze */
+  font-size: 20px;
+  border: 0; /* A táblázat vonalainak eltávolítása */
+}
+

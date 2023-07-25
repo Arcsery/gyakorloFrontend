@@ -7,6 +7,7 @@ const routes: Routes = [
   { path: 'register', loadChildren: () => import('./pages/register/register.module').then(m => m.RegisterModule) },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'users', loadChildren: () => import('./pages/user-lister/user-lister.module').then(m => m.UserListerModule) },
+  { path: 'user/:userId', loadChildren: () => import('./pages/user-lister/single-user/single-user.module').then(m => m.SingleUserModule) },
 ];
 
 @NgModule({
