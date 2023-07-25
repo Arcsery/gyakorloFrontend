@@ -25,15 +25,27 @@ export class SidebarComponent implements OnInit {
                     escape: false,
                     icon: 'pi pi-user-plus',
                     iconClass: 'text-xl',
-                    url: '/register'
+                    routerLink: '/register'
                 },
                 {
                     label: '<span class="text-lg ml-2 ">Bejelentkezés</span>',
                     escape: false,
                     icon: 'pi pi-user',
                     iconClass: 'text-xl',
-                    url: '/login'
+                    routerLink: '/login'
                 }
+            ]
+        },
+        {
+            label: 'Felhasználók',
+            items: [
+                {
+                    label: '<span class="text-lg ml-2 ">Listázás</span>',
+                    escape: false,
+                    icon: 'pi pi-list',
+                    iconClass: 'text-xl',
+                    routerLink: '/users'
+                },
             ]
         }
     ];

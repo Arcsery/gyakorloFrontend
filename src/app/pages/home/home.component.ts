@@ -13,6 +13,9 @@ export class HomeComponent implements OnInit {
   
   users: User[] = [];
 
+  employees: any =  [];
+  
+
   constructor(private backendService: BackendService, private router: Router, public layoutService: LayoutService){
 
   }
@@ -20,6 +23,13 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
       this.getUsers();
+      
+      this.employees = [
+        { id: 1, name: 'John Doe', position: 'Developer', department: 'IT' },
+        { id: 2, name: 'Jane Smith', position: 'Designer', department: 'Graphics' },
+        { id: 3, name: 'Robert Johnson', position: 'Manager', department: 'HR' },
+        // Ide írhatja a többi alkalmazott adatait
+      ];
   }
 
   getUsers(){

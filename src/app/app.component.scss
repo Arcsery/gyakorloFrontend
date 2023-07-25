@@ -1,5 +1,6 @@
 .layout-container {
     display: flex;
+    overflow-x: hidden;
   }
   
   .layout-container-active .layout-sidebar {
@@ -13,10 +14,4 @@
   
   .layout-container-active .layout-content {
     transform: translateX(350px);
-  }
-
-  body{
-    margin-top: 110px;
-    margin-left: 50px;
-    margin-right: 50px;
   }

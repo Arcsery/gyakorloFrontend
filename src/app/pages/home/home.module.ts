@@ -5,6 +5,9 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { HttpClientModule } from '@angular/common/http';
 
+import { TableModule } from 'primeng/table';
+import { CardModule } from 'primeng/card';
+
 
 @NgModule({
   declarations: [
@@ -13,7 +16,9 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    TableModule,
+    CardModule
   ]
 })
 export class HomeModule { }

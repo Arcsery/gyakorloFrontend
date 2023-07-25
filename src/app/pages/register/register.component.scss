@@ -1,25 +1,6 @@
-p {
-    font-family: Lato;
-  }
-  
-  #root {
-    padding: 30px;
-  }
-  
-  .register-form {
-    max-width: 350px;
-    margin: auto;
-    margin-top: 150px;
-    background-color: #f0f0f0; 
-    border-radius: 10px;
-    padding: 20px;
-  }
-
-  .form-group.button-group {
-    margin-top: 20px;
-  }
-
-  button.btn-warning {
-    margin-left: 10px; /* Változtasd meg a kívánt margint */
-  }
-  
+.layout-container{
+  margin-top: 100px;
+  margin-left: 0px;
+  margin-right: 500px;
+  transition: transform 0.3s ease;
+}

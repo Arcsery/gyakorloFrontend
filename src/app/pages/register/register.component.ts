@@ -5,6 +5,7 @@ import { User } from 'src/app/model/User';
 import Validation from 'src/app/services/Validation';
 import { AuthService } from 'src/app/services/auth.service';
 import { BackendService } from 'src/app/services/backend.service';
+import { LayoutService } from 'src/app/services/layout.service';
 
 @Component({
   selector: 'app-register',
@@ -22,7 +23,7 @@ export class RegisterComponent implements OnInit{
     });
     submitted: boolean = false;
 
-    constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router){}
+    constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router, public layoutService: LayoutService){}
 
 
     ngOnInit(): void {
@@ -58,6 +59,8 @@ export class RegisterComponent implements OnInit{
 
   onSubmit(): void {
     this.submitted = true;
+
+    console.log(this.form.value)
 
     if (this.form.invalid) {
       return;

@@ -1,0 +1,16 @@
+<div class="input-container p-input-icon-left">
+    <i class="pi pi-search"></i>
+    <input type="text" pInputText placeholder="Global Search" />
+</div>
+
+<div class="users-container">
+    <p-card header={{user.name}} subheader="{{user.role}}" [style]="{ width: '360px' }" *ngFor="let user of users">
+        <ng-template pTemplate="header">
+            <img alt="Card" src="https://stmaaprodfwsite.blob.core.windows.net/assets/sites/1/Alex-Robinson-Terravesta-c-electric-egg.jpg" />
+        </ng-template>
+        <ng-template pTemplate="footer">
+            <p-button label="Részletek" icon="pi pi-info-circle"></p-button>
+            <p-button label="Módosítás" icon="pi pi-pencil" styleClass="p-button-secondary" [style]="{ 'margin-left': '.5em' }"></p-button>
+        </ng-template>
+    </p-card>
+</div>
