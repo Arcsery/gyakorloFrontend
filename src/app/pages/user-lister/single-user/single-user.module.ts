@@ -9,6 +9,8 @@ import { FieldsetModule } from 'primeng/fieldset';
 import { SplitterModule } from 'primeng/splitter';
 import { TabViewModule } from 'primeng/tabview';
 import { ButtonModule } from 'primeng/button';
+import { InputNumberModule } from 'primeng/inputnumber';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { ButtonModule } from 'primeng/button';
     FieldsetModule,
     SplitterModule,
     TabViewModule,
-    ButtonModule
+    ButtonModule,
+    InputNumberModule,
+    InputTextareaModule
   ]
 })
 export class SingleUserModule { }

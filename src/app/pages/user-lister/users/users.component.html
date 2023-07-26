@@ -10,7 +10,24 @@
         </ng-template>
         <ng-template pTemplate="footer">
             <p-button routerLink="/user/1" label="Részletek" icon="pi pi-info-circle"></p-button>
-            <p-button label="Módosítás" icon="pi pi-pencil" styleClass="p-button-secondary" [style]="{ 'margin-left': '.5em' }"></p-button>
+            <p-button (onClick)="showEditFormFunc()" label="Módosítás" icon="pi pi-pencil" styleClass="p-button-secondary" [style]="{ 'margin-left': '.5em' }"></p-button>
+            <p-button styleClass="p-button-danger" icon="pi pi-times" [style]="{'margin-left': '.5em', 'width': '50px' }" ></p-button>
         </ng-template>
     </p-card>
+</div>
+
+<div class="overlay" *ngIf="showEditForm">
+    <div class="edit-form-container">
+        <form>
+            <legend><span class="number">1</span>Adtok módosítása</legend>
+            <label>Jogosultság</label>
+            <p-dropdown formControlName="city" [options]="cities" optionLabel="name"></p-dropdown>
+            <label>Munkakör</label>
+            <p-dropdown formControlName="city" [options]="cities" optionLabel="name"></p-dropdown>
+            <div class="form-actions">
+                <button class="save-btn" >Mentés</button>
+                <button class="cancel-btn" (click)="showEditForm = false">Mégse</button>
+            </div>
+        </form>
+    </div>
 </div>

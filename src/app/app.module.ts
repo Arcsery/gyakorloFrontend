@@ -11,6 +11,9 @@ import { PanelMenuModule } from 'primeng/panelmenu';
 
 import { MenuModule } from 'primeng/menu';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DropdownModule } from 'primeng/dropdown';
+import { OverlayPanelModule } from 'primeng/overlaypanel';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +26,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     MenuModule,
     BrowserAnimationsModule,
-    PanelMenuModule
+    PanelMenuModule,
+    DropdownModule,
+    OverlayPanelModule
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]

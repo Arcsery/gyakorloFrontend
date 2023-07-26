@@ -6,6 +6,7 @@ import { UserListerComponent } from './user-lister.component';
 import { UsersComponent } from './users/users.component';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
+import { DropdownModule } from 'primeng/dropdown';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ButtonModule } from 'primeng/button';
     CommonModule,
     UserListerRoutingModule,
     CardModule,
-    ButtonModule
+    ButtonModule,
+    DropdownModule
   ]
 })
 export class UserListerModule { }

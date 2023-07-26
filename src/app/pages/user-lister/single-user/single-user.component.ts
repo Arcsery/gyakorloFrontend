@@ -8,6 +8,15 @@ import { LayoutService } from 'src/app/services/layout.service';
 })
 export class SingleUserComponent {
 
+  showEditForm: boolean = false
+
   constructor(public layoutService: LayoutService){}
+
+  showEditFormFunc(){
+      this.showEditForm = true;
+      if(this.layoutService.state.overlayMenuActive){
+        this.layoutService.state.overlayMenuActive = false;
+      }
+  }
 
 }
