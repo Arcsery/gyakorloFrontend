@@ -30,9 +30,16 @@ export class HeaderComponent implements OnInit{
           label: 'John Doe',
           items: [
               {
+                  label: '<span class="text-lg ml-2 ">Profil</span>',
+                  escape: false,
+                  icon: 'pi pi-user',
+                  iconClass: 'text-xl',
+                  routerLink: '/login'
+              },
+              {
                   label: '<span class="text-lg ml-2 ">Kijelentkezés</span>',
                   escape: false,
-                  icon: 'pi pi-user-plus',
+                  icon: 'pi pi-sign-out',
                   iconClass: 'text-xl',
                   routerLink: '/login'
               },

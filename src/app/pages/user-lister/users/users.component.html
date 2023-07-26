@@ -11,7 +11,7 @@
         <ng-template pTemplate="footer">
             <p-button routerLink="/user/1" label="Részletek" icon="pi pi-info-circle"></p-button>
             <p-button (onClick)="showEditFormFunc()" label="Módosítás" icon="pi pi-pencil" styleClass="p-button-secondary" [style]="{ 'margin-left': '.5em' }"></p-button>
-            <p-button styleClass="p-button-danger" icon="pi pi-times" [style]="{'margin-left': '.5em', 'width': '50px' }" ></p-button>
+            <p-button styleClass="p-button-danger" icon="pi pi-trash" [style]="{'margin-left': '.5em', 'width': '50px' }" ></p-button>
         </ng-template>
     </p-card>
 </div>
@@ -23,10 +23,16 @@
             <label>Jogosultság</label>
             <p-dropdown formControlName="city" [options]="cities" optionLabel="name"></p-dropdown>
             <label>Munkakör</label>
-            <p-dropdown formControlName="city" [options]="cities" optionLabel="name"></p-dropdown>
-            <div class="form-actions">
-                <button class="save-btn" >Mentés</button>
-                <button class="cancel-btn" (click)="showEditForm = false">Mégse</button>
+            <div class="edit-flex-container">
+                <div class="edit-flex-left">
+                    <p-dropdown formControlName="city" [options]="cities" optionLabel="name"></p-dropdown>
+                </div>
+               <div class="edit-flex-right">
+                    <div class="form-actions">
+                        <p-button class="button-save" [style]="{'width':'60px', 'padding':'10px'}" icon="pi pi-save"></p-button>
+                        <p-button (onClick)="showEditForm = false" class="ml-2" styleClass="p-button-secondary" icon="pi pi-times" [style]="{'width':'60px', 'padding':'10px'}" ></p-button>
+                    </div>
+               </div>
             </div>
         </form>
     </div>
