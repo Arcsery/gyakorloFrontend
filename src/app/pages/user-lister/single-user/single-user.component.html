@@ -14,7 +14,7 @@
     <div class="right-column">
         <div class="user-header-container">
             <div class="header-left-column">
-                <h1>John Doe</h1>
+                <h1>{{user?.name}}</h1>
                 <h3 class="text-600 font-medium">Admin</h3>
             </div>
             <div class="header-right-column">
@@ -32,19 +32,19 @@
             <table >
                 <tr>
                     <td class="text-blue-600">ID</td>
-                    <td>02</td>
+                    <td>{{user?.id}}</td>
                 </tr>
                 <tr>
                     <td class="text-blue-600">Név</td>
-                    <td>Jhon Doe</td>
+                    <td>{{user?.name}}</td>
                 </tr>  
                 <tr>
                   <td class="text-blue-600">Kor</td>
-                  <td>22</td>
+                  <td>{{user?.age}}</td>
                 </tr>
                 <tr>
                   <td class="text-blue-600">Email</td>
-                  <td>valaki@gmail.com</td>
+                  <td>{{user?.age}}</td>
                 </tr>
                 <tr>
                     <td class="text-blue-600">Telefonszám</td>
@@ -66,16 +66,16 @@
             <legend><span class="number">1</span>Adtok módosítása</legend>
             <div class="flex flex-column gap-2">
                 <label htmlFor="username">Név</label>
-                <input pInputText id="username" aria-describedby="username-help" [style]="{'padding':'5px'}" />
+                <input placeholder={{user?.name}} pInputText id="username" aria-describedby="username-help" [style]="{'padding':'5px'}" />
                 <small id="username-help">Név módosítás</small>
             </div>
             <div class="flex flex-column gap-2">
                 <label htmlFor="username">Kor</label>
-                <input type="number" pInputText id="username" aria-describedby="username-help" [style]="{'padding':'5px'}"/>
+                <input placeholder={{user?.age}} type="number" pInputText id="username" aria-describedby="username-help" [style]="{'padding':'5px'}"/>
                 <small id="username-help">Kor módosítás.</small>
             </div><div class="flex flex-column gap-2">
                 <label htmlFor="username">Email</label>
-                <input type="email" pInputText id="username" aria-describedby="username-help" [style]="{'padding':'5px'}" />
+                <input placeholder={{user?.email}} type="email" pInputText id="username" aria-describedby="username-help" [style]="{'padding':'5px'}" />
                 <small id="username-help">Email módosítás.</small>
             </div><div class="flex flex-column gap-2">
                 <label htmlFor="username">Telefonszám</label>

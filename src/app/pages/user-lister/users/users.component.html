@@ -4,33 +4,39 @@
 </div>
 
 <div class="users-container">
-    <p-card header={{user.name}} subheader="{{user.role}}" [style]="{ width: '360px' }" *ngFor="let user of users">
+    <p-card header={{user.name}} subheader="{{user.roles}}" [style]="{ width: '360px' }" *ngFor="let user of users">
         <ng-template pTemplate="header">
             <img alt="Card" src="https://stmaaprodfwsite.blob.core.windows.net/assets/sites/1/Alex-Robinson-Terravesta-c-electric-egg.jpg" />
         </ng-template>
         <ng-template pTemplate="footer">
-            <p-button routerLink="/user/1" label="Részletek" icon="pi pi-info-circle"></p-button>
+            <p-button routerLink="/user/{{user.id}}" label="Részletek" icon="pi pi-info-circle"></p-button>
             <p-button (onClick)="showEditFormFunc()" label="Módosítás" icon="pi pi-pencil" styleClass="p-button-secondary" [style]="{ 'margin-left': '.5em' }"></p-button>
-            <p-button styleClass="p-button-danger" icon="pi pi-trash" [style]="{'margin-left': '.5em', 'width': '50px' }" ></p-button>
+            <p-button (onClick)="showDeleteFormFunc()" styleClass="p-button-danger" icon="pi pi-trash" [style]="{'margin-left': '.5em', 'width': '50px' }" ></p-button>
         </ng-template>
     </p-card>
 </div>
 
-<div class="overlay" *ngIf="showEditForm">
-    <div class="edit-form-container">
+<div class="overlay" *ngIf="showOverlay">
+
+    <div class="delete-confirm-container" *ngIf="showDeleteForm">
+        <label>Biztosan elszeretné távolítani ezt a felhasználót?</label>
+    </div>
+
+
+    <div class="edit-form-container"*ngIf="showEditForm">
         <form>
             <legend><span class="number">1</span>Adtok módosítása</legend>
             <label>Jogosultság</label>
-            <p-dropdown formControlName="city" [options]="cities" optionLabel="name"></p-dropdown>
+            <p-dropdown formControlName="city" [options]="roles" optionLabel="name"></p-dropdown>
             <label>Munkakör</label>
             <div class="edit-flex-container">
                 <div class="edit-flex-left">
-                    <p-dropdown formControlName="city" [options]="cities" optionLabel="name"></p-dropdown>
+                    <p-dropdown formControlName="city" [options]="jobs" optionLabel="name"></p-dropdown>
                 </div>
                <div class="edit-flex-right">
                     <div class="form-actions">
                         <p-button class="button-save" [style]="{'width':'60px', 'padding':'10px'}" icon="pi pi-save"></p-button>
-                        <p-button (onClick)="showEditForm = false" class="ml-2" styleClass="p-button-secondary" icon="pi pi-times" [style]="{'width':'60px', 'padding':'10px'}" ></p-button>
+                        <p-button (onClick)="showOverlay = false" (onClick)="showEditForm = false" class="ml-2" styleClass="p-button-secondary" icon="pi pi-times" [style]="{'width':'60px', 'padding':'10px'}" ></p-button>
                     </div>
                </div>
             </div>

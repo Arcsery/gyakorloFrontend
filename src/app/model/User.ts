@@ -4,5 +4,9 @@ export interface User{
     username: string,
     password: string,
     email: string,
-    age: number
+    age: number,
+    roles?: [{
+        id: number,
+        name: string
+    }]
 }

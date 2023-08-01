@@ -23,11 +23,21 @@ export class HeaderComponent implements OnInit{
   ngOnInit(): void {
     const user: UserLoggedIn | null = this.storageService.getUserFromCookie();
 
+    console.log(user?.username)
+
+    if(user){
+      this.cookieUsername = user.username;
+    }
+
+    this.sharedDataService.getUsername().subscribe((username: string) => {
+      this.loginUsername = username;
+    });
+
 
     this.items = [
       
       {
-          label: 'John Doe',
+          label: this.cookieUsername,
           items: [
               {
                   label: '<span class="text-lg ml-2 ">Profil</span>',
@@ -41,19 +51,16 @@ export class HeaderComponent implements OnInit{
                   escape: false,
                   icon: 'pi pi-sign-out',
                   iconClass: 'text-xl',
-                  routerLink: '/login'
+                  routerLink: '/login',
+                  command: () =>{
+                    this.logout();
+                  }
               },
           ]
       },
   ];
 
-    if(user){
-      this.cookieUsername = user.username;
-    }
-
-    this.sharedDataService.getUsername().subscribe((username: string) => {
-      this.loginUsername = username;
-    });
+    
   }
 
   @ViewChild('overlayPanel')

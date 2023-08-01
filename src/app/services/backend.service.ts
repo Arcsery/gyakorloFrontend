@@ -14,6 +14,10 @@ export class BackendService {
     return this.http.get<User[]>('http://localhost:8080/api/user/getUsers')
   }
 
+  getUserById(id: number): Observable<User>{
+    return this.http.get<User>(`http://localhost:8080/api/user/getUserById/${id}`);
+  }
+
   deleteUser(id: number): Observable<void>{
     return this.http.delete<void>(`http://localhost:8080/api/user/deleteUser/${id}`);
   }

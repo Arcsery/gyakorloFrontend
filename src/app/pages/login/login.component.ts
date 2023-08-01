@@ -64,7 +64,9 @@ export class LoginComponent implements OnInit{
         this.isLoggedIn = true;
         this.sharedDataService.setUsername(result.username)
         this.roles = this.storageService.getUser().roles;
-        this.router.navigateByUrl("/home")
+        this.router.navigateByUrl("/home").then(() =>{
+          window.location.reload()
+        })
       },
       error: error =>{
         console.log(error.error.message)
