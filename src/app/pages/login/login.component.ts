@@ -30,7 +30,6 @@ export class LoginComponent implements OnInit{
 
     if(this.storageService.isLoggedIn()){
       this.isLoggedIn = true
-      this.roles = this.storageService.getUser().roles;
     }
 
     this.form = this.formBuilder.group({
@@ -59,11 +58,9 @@ export class LoginComponent implements OnInit{
 
     this.authService.login(user).subscribe({
       next: result =>{
-        this.storageService.saveUser(result);
         this.storageService.saveUserToCookie(result);
         this.isLoggedIn = true;
         this.sharedDataService.setUsername(result.username)
-        this.roles = this.storageService.getUser().roles;
         this.router.navigateByUrl("/home").then(() =>{
           window.location.reload()
         })

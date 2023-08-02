@@ -13,18 +13,9 @@ export class StorageService {
 
   constructor() { }
 
-  clean(): void {
-    window.sessionStorage.clear();
-    window.location.reload()
-  }
-
-  public saveUser(user: UserLoggedIn): void{
-    window.sessionStorage.removeItem(USER_KEY)
-    window.sessionStorage.setItem(USER_KEY, JSON.stringify(user))
-  }
-
   public cleanCookie(): void {
     document.cookie = `${USER_KEY}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+    window.location.reload()
   }
 
   private convertUserToJSONString(user: UserLoggedIn): string {
@@ -59,22 +50,12 @@ export class StorageService {
     return null;
   }
 
-  public getUser(): any{
-    const user = window.sessionStorage.getItem(USER_KEY);
-    if (user){
-      return JSON.parse(user);
-    }
-
-    return {};
-  }
 
   public isLoggedIn(): boolean{
-    const user = window.sessionStorage.getItem(USER_KEY);
     const cookieUser = this.getUserFromCookie()
-    if (user || cookieUser){
+    if (cookieUser){
       return true;
     }
-
     return false;
   }
 }
